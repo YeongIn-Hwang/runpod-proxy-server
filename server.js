@@ -125,6 +125,9 @@ app.post('/transcribe', upload.single('file'), async (req, res) => {
             error: "AI 처리 중 오류가 발생했습니다.", 
             details: error.message 
         });
+
+        return;
+        
     } finally {
         // 6. 정리 작업: 서버 임시 파일 삭제
         // Render 서버의 디스크 공간 관리를 위해 임시 파일을 삭제합니다.
