@@ -47,7 +47,7 @@ async function pollRunPodJob(jobId) {
     let status = 'IN_PROGRESS';
 
     // 3초마다 상태 확인을 최대 30번 (총 90초)까지 시도
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 70; i++) {
         await new Promise(resolve => setTimeout(resolve, 3000)); // 3초 대기
 
         const statusResponse = await axios.get(`${RUNPOD_BASE_URL}/status/${jobId}`, { headers: RUNPOD_HEADERS });
